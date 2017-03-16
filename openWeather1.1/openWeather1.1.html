@@ -40,8 +40,8 @@
 				<div class="panel panel-primary">
 			      <div class="panel-heading"><span class="fa fa-map-marker fa-2x pull-right" aria-hidden="true"></span>Latitude & Longitude</div>
 			      <div class="panel-body">
-			      <strong>Latitude : </strong>{{lat}} <br>
-			      <strong>Longitude : </strong>{{long}} 
+			      <p ng-hide="lat==null"><strong>Latitude : </strong>{{lat}}</p> <br>
+			      <p ng-hide="long==null"><strong>Longitude : </strong>{{long}} </p>
 			      </div>
 			    </div>
 			</div>
@@ -50,8 +50,8 @@
 				<div class="panel panel-primary">
 			      <div class="panel-heading"> <span class="fa fa-2x fa-sun-o pull-right" aria-hidden="true"></span>Sunrise & Sunset</div>
 			      <div class="panel-body">
-			      <strong>Sunrise :</strong>{{sunrise |date:'HH:mm:ss Z'}}<br>
-			      <strong>Sunset  :</strong>{{sunset |date:'HH:mm:ss Z'}}
+			      <p ng-hide="sunrise==null"><strong>Sunrise :</strong>{{sunrise * 1000|date:'medium'}}</p><br>
+			      <p ng-hide="sunset==null"><strong>Sunset  :</strong>{{sunset *1000 |date:'medium'}}</p>
 			      </div>
 			    </div>
 			</div>
@@ -59,8 +59,8 @@
 				<div class="panel panel-primary">
 			      <div class="panel-heading"> <span class="fa fa-2x fa-tint pull-right" aria-hidden="true"></span> Humidity & Pressure</div>
 			      <div class="panel-body">
-			      <strong>Humidity :</strong>{{humidity}}<br>
-			      <strong>Pressure :</strong>{{pressure}}
+			      <p ng-hide="humidity==null"><strong>Humidity :</strong>{{humidity + "percent"}}</p><br>
+			      <p ng-hide="pressure==null"><strong>Pressure :</strong>{{pressure + "mb"}}</p>
 			      </div>
 			    </div>
 			</div>
@@ -70,11 +70,11 @@
 			<div class="col-md-3 col-md-offset-1">
 				<div class="panel panel-primary">
 			      
-			      <div class="panel-heading"><span class="fa fa-2x fa-thermometer-quarter pull-right" aria-hidden="true"></span>Temparature</div>
+			      <div class="panel-heading"><span class="fa fa-2x fa-thermometer-quarter pull-right" aria-hidden="true"></span>Temparature (&#8451)</div>
 			      <div class="panel-body">
-			      	<strong>Temparature : </strong>{{temp| number :2}}<br>
-			      	<strong>Maximum Temperature : </strong>{{temp_max | number :2}}<br>
-			      	<strong>Minimum Temperature : </strong>{{temp_min | number :2}}
+			      	<p ng-hide="temp==null"><strong>Temparature : </strong>{{temp| number :2}}</p><br>
+			      	<p ng-hide="temp_max==null"><strong>Maximum Temperature : </strong>{{temp_max | number :2}}</p><br>
+			      	<p ng-hide="temp_min==null"><strong>Minimum Temperature : </strong>{{temp_min | number :2}}</p>
 			      </div>
 			    </div>
 			</div>
@@ -83,8 +83,8 @@
 				<div class="panel panel-primary">
 			      <div class="panel-heading"><span class="fa fa-2x fa-location-arrow pull-right" aria-hidden="true"></span>Wind</div>
 			      <div class="panel-body"><br>
-			      <strong>Wind Degree :</strong>{{wind_degree}}<br>
-			      <strong>Wind Speed :</strong>{{wind_speed}}<br>
+			      <p ng-hide="wind_degree==null"><strong>Wind Degree :</strong>{{wind_degree + "N"}}</p><br>
+			      <p ng-hide="wind_speed==null"><strong>Wind Speed :</strong>{{wind_speed + "knot"}}</p>
 			      </div>
 			    </div>
 			</div>
@@ -92,8 +92,8 @@
 				<div class="panel panel-primary">
 			      <div class="panel-heading"> <span class="fa fa-2x fa-cloud pull-right" aria-hidden="true"></span> Clarity</div>
 			      <div class="panel-body"><br>
-			      <strong>Visibility :</strong>{{visibility}}<br>
-			      <strong>Description :</strong>{{weather_description}}
+			      <p ng-hide="visibility==null"><strong>Visibility :</strong>{{visibility}}</p><br>
+			      <p ng-hide="weather_description==null"><strong>Description :</strong>{{weather_description}}</p>
 			      </div>
 			    </div>
 			</div>
